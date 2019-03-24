@@ -1,0 +1,21 @@
+* Spaceemacs Rocks
+
+** Install emacs
+** Go over the emacs tutorial at least once
+- C-h t open the tutorial
+- You need be familiar with cursor movement(C-f/C-b/C-n/C-p/C-a/C-e) and basic editing(C-k)
+- You should be familiar with M(eta) s(uper, command key) S(hift) C(trl)
+- Prefix key (c-h c-x) and C-g
+
+** Learn to active some build-in functionality
+- linum-mode to display line numbers(M-x linum-mode)
+- C-x C-f to open files C-x C-s to save files
+- You should always to ask emacs the right question
+- The key bindings are actually a quick way to command emacs
+- C-h k 快捷键/ C-h v变量/ C-h f函数(emacs is a self document extensiable editor)
+- eg: to see C-x C-f for usage we use C-h k C-x C-f
+- the key bindings are actually a quick way to command Emacs.
+- learn some elisp (scratch buffer) C-x C-e
+
+** Start to hacking Emacs from the day one
+** Emacs package system in the first glance
