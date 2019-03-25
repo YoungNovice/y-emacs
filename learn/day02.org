@@ -1,0 +1,15 @@
+* spacemacs rocks episode 2 (Day two)
+
+<s tab 这个是代码段 真的很好玩
+
+** Fix some annoying stuff
+1. (setq-default cursor-type 'bar)
+2. disable backup file
+#+BEGIN_SRC emacs-lisp
+(setq make-backup-files nil)
+#+END_SRC
+
+#+BEGIN_SRC emacs
+
+#+END_SRC
+

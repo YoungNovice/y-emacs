@@ -1,0 +1,21 @@
+
+;; ----- smex-history -----
+(
+ find-function
+ nodejs-repl
+ customize-group
+ counsel-describe-function
+ package-list-packages
+ package-autoremove
+ cd
+)
+
+;; ----- smex-data -----
+(
+ (customize-group . 3)
+ (package-autoremove . 1)
+ (package-list-packages . 1)
+ (counsel-describe-function . 1)
+ (nodejs-repl . 2)
+ (find-function . 1)
+)

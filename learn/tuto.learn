@@ -1,0 +1,10 @@
+C-f 向前移动
+C-x C-c 退出emacs
+C-g 退出一个正在执行的命令 C-g
+C-f 向前移动
+C-x C-c exit emacs
+C-g 退出一个正在执行的命令 C-g
+
+C-v 查看下一屏幕的文字
+M-v 查看上一屏幕的文字
+ 
