@@ -7,6 +7,7 @@
 (defvar young/packages '(
 			 company
 			 monokai-theme
+			 zenburn-theme
 			 hungry-delete
 			 smex
 			 counsel
@@ -64,7 +65,8 @@
 
 (setq package-selected-packages young/packages)
 (require 'hungry-delete)
-( global-hungry-delete-mode 1)
+(global-hungry-delete-mode 1)
+(global-auto-revert-mode 1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (global-linum-mode t)
@@ -78,6 +80,7 @@
 (global-company-mode t)
 ;;(setq-default cursor-type 'bar)
 (setq make-backup-files nil)
+(setq auto-save-default nil)
 
 (require 'org)
 (setq org-src-fontify-natively t)
@@ -92,7 +95,7 @@
 (setq initial-frame-alist (quote ((fullscreen . maximized))))
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 (global-hl-line-mode t)
-(load-theme 'monokai t)
+(load-theme 'zenburn t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
