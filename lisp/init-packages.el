@@ -10,7 +10,6 @@
 			 monokai-theme
 			 zenburn-theme
 			 hungry-delete
-;;			 smex
 			 counsel
 			 swiper
 			 smartparens
@@ -18,6 +17,8 @@
 			 nodejs-repl
 			 exec-path-from-shell
 			 ) "Default packages")
+
+(setq package-selected-packages young/packages)
 
 (defun young/packages-installed-p ()
   (loop for pkg in young/packages
@@ -34,10 +35,8 @@
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
 
-(require 'hungry-delete)
 (global-hungry-delete-mode 1)
-
-(require 'smartparens-config)
+;;(add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
 (smartparens-global-mode t)
 
 (ivy-mode 1)
@@ -53,3 +52,5 @@
 (popwin-mode t)
 
 (provide 'init-packages)
+;;(require 'hungry-delete)
+;;(require 'smartparens-config)
