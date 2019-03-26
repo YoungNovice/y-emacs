@@ -1,0 +1,43 @@
+load-file 
+指定加载el文件的路径 明确的
+
+load
+先到指定的load-path 先找el 再找elc文件
+
+load-path
+ 
+
+features
+
+provide
+一般自己写好插件之后定一个名字 系统在加载的时候会加载到一个叫features的变量里面去
+
+
+require
+表示启用这个插件 实际上是遍历features列表 然后调用load函数
+先找elc如果elc没有 就加载el
+
+augoload
+这个已经说了的 emacs先找注释生成xxx-autoloads.el文件 之后在package-initialize
+之后加载xxx-autoloads这些个文件
+
+在company-mode这个模式代码中我们发现有一个注释
+;;;###autoload 这个字样 
+这是什么意思呢
+
+我们系统在调用package-initialize这个方法时
+系统会扫描elpa这个文件 找到某个插件库中的xxx-autoloads.el 这个文件
+这个文件是自动生成的 他会查询自己插件库的所有的魔法注释(;;;###这个)
+他会加载这个xxx-autoloads.el这个文件
+
+naming conventions
+elisp中所有的变量都是全局可见的 
+为了防止名字冲突 如果是自己的变量用自己的名字 yangxuan/xxx
+如果创建了某个mode aaa-mode 里面的变量方法最好都是aaa-xxx的这种形式
+
+* how to organize your config
+init-package.el
+init-ui.eli
+init-better-default.el
+init-keybinding.el 
+custom.el
