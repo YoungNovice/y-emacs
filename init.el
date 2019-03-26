@@ -1,8 +1,8 @@
 (when (>= emacs-major-version 24)
   (require 'package)
   (package-initialize)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-  )
+  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t))
+
 (require 'cl)
 (defvar young/packages '(
 			 company
@@ -96,6 +96,32 @@
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 (global-hl-line-mode t)
 (load-theme 'zenburn t)
+
+
+;;copy region or whole line
+(global-set-key "\M-w"
+(lambda ()
+(interactve)
+(if mark-active
+    (kill-ring-save (region-beginning)
+    (region-end))
+    (progn
+    (kill-ring-save (line-beginning-position)
+    (line-end-postion))
+    (message "copyied line")))))
+
+;; kill region or whole line
+(global-set-key "\C-w"
+(lambda ()
+(interactive)
+(if mark-active
+    (kill-region (region-beginning)
+    (region-end))
+    (prop
+    (kill-region (line-beginning-position)
+    (line-end-position))
+    (message "killed line")))))
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
