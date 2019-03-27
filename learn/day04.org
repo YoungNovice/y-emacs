@@ -10,3 +10,14 @@
 5. update-file-autoloads 然后load
 (update-file-autoloads "~/.emacs.d/lisp/init-better-defaults.el" t "~/.emacs.d/lisp/init-better-defaults-autoload.el")
 (load "init-better-defaults-autoload")
+
+* Dired mode
+1. make dir           + 
+2. refresh            g
+3. make file          c-x c-f
+4. copy file          C
+5. delete file        d D
+6. execute            x
+7. rename             R
+8. current-buffer     c-x c-j
+9. 
