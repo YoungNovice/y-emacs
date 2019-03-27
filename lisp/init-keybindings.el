@@ -54,4 +54,6 @@
 				  (line-end-position))
 		     (message "killed line")))))
 
+(js2r-add-keybindings-with-prefix "C-c C-m")
+
 (provide 'init-keybindings)
