@@ -17,8 +17,6 @@
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 (add-hook 'prog-mode-hook 'abbrev-mode)
 
-(delete-selection-mode t)
-
 (defun indent-buffer ()
   (interactive)
   (indent-region (point-min) (point-max)))
