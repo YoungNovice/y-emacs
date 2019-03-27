@@ -1,6 +1,11 @@
+;;;###autoload
+(defun test-keybindings()
+  (interactive)
+  (message "test-keybindings"))
+
 (global-set-key "\C-s" 'swiper)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
- 
+
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-h f") 'counsel-describe-function)
@@ -20,26 +25,26 @@
 
 ;;copy region or whole line
 (global-set-key "\M-w"
-(lambda ()
-(interactve)
-(if mark-active
-    (kill-ring-save (region-beginning)
-    (region-end))
-    (progn
-    (kill-ring-save (line-beginning-position)
-    (line-end-postion))
-    (message "copyied line")))))
+		(lambda ()
+		  (interactve)
+		  (if mark-active
+		      (kill-ring-save (region-beginning)
+				      (region-end))
+		    (progn
+		      (kill-ring-save (line-beginning-position)
+				      (line-end-postion))
+		      (message "copyied line")))))
 
 ;; kill region or whole line
 (global-set-key "\C-w"
-(lambda ()
-(interactive)
-(if mark-active
-    (kill-region (region-beginning)
-    (region-end))
-    (prop
-    (kill-region (line-beginning-position)
-    (line-end-position))
-    (message "killed line")))))
+		(lambda ()
+		  (interactive)
+		  (if mark-active
+		      (kill-region (region-beginning)
+				   (region-end))
+		    (prop
+		     (kill-region (line-beginning-position)
+				  (line-end-position))
+		     (message "killed line")))))
 
 (provide 'init-keybindings)

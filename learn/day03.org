@@ -2,20 +2,22 @@ load-file
 指定加载el文件的路径 明确的
 
 load
-先到指定的load-path 先找el 再找elc文件
+先到指定的load-path 先找elc 再找el文件
 
 load-path
- 
 
 features
+调用provide后 features列表中就增加一个特性
 
 provide
-一般自己写好插件之后定一个名字 系统在加载的时候会加载到一个叫features的变量里面去
+一般自己写好插件之后定一个名字
 
 
 require
-表示启用这个插件 实际上是遍历features列表 然后调用load函数
+表示启用这个插件 实际上是调用load(filename)
+然后到loadpath中去找某个文件的 
 先找elc如果elc没有 就加载el
+找到后加载文件
 
 augoload
 这个已经说了的 emacs先找注释生成xxx-autoloads.el文件 之后在package-initialize

@@ -4,7 +4,7 @@
 
 ;; Author: Oleh Krehel <ohwoeowho@gmail.com>
 ;; URL: https://github.com/abo-abo/swiper
-;; Package-Version: 20190325.1109
+;; Package-Version: 20190326.940
 ;; Version: 0.11.0
 ;; Package-Requires: ((emacs "24.3") (swiper "0.11.0"))
 ;; Keywords: convenience, matching, tools
@@ -64,14 +64,16 @@ Note that incorrect results may be returned for sufficiently
 complex regexes."
   (if (consp regex)
       (if look-around
-          (mapconcat
-           (lambda (pair)
-             (let ((subexp (counsel--elisp-to-pcre (car pair))))
-               (format "(?%c.*%s)"
-                       (if (cdr pair) ?= ?!)
-                       subexp)))
-           regex
-           "")
+          (concat
+           "^"
+           (mapconcat
+            (lambda (pair)
+              (let ((subexp (counsel--elisp-to-pcre (car pair))))
+                (format "(?%c.*%s)"
+                        (if (cdr pair) ?= ?!)
+                        subexp)))
+            regex
+            ""))
         (mapconcat
          (lambda (pair)
            (let ((subexp (counsel--elisp-to-pcre (car pair))))
@@ -2113,15 +2115,16 @@ will be expanded according to its format.  This function is
 intended to be used in `ivy-ffap-url-functions' to browse the
 result as a URL."
   (let ((word-at-point (current-word)))
-    (cl-some
-     (lambda (pair)
-       (let ((regexp (car pair))
-             (formatter (cdr pair)))
-         (when (string-match regexp word-at-point)
-           (if (functionp formatter)
-               (funcall formatter word-at-point)
-             (format formatter word-at-point)))))
-     counsel-url-expansions-alist)))
+    (when word-at-point
+      (cl-some
+       (lambda (pair)
+         (let ((regexp (car pair))
+               (formatter (cdr pair)))
+           (when (string-match regexp word-at-point)
+             (if (functionp formatter)
+                 (funcall formatter word-at-point)
+               (format formatter word-at-point)))))
+       counsel-url-expansions-alist))))
 
 ;;** `counsel-recentf'
 (defvar recentf-list)
@@ -2622,7 +2625,7 @@ NEEDLE is the search string."
        (let ((default-directory (ivy-state-directory ivy-last))
              (regex (counsel--grep-regex search-term)))
          (if (and (stringp counsel--regex-look-around)
-                  (string-match-p "\\`(\\?[=!]" regex)) ;; using look-arounds
+                  (string-match-p "\\`\\^(\\?[=!]" regex)) ;; using look-arounds
              (setq switches (concat switches " " counsel--regex-look-around)))
          (counsel--async-command (counsel--format-ag-command
                                   switches
@@ -2853,8 +2856,11 @@ When non-nil, INITIAL-INPUT is the initial search pattern."
   (setq counsel-grep-last-line nil)
   (setq counsel-grep-command
         (format counsel-grep-base-command
-                "%s" (shell-quote-argument buffer-file-name)))
-  (let ((init-point (point))
+                "%s" (shell-quote-argument
+                      (file-name-nondirectory
+                       buffer-file-name))))
+  (let ((default-directory (file-name-directory buffer-file-name))
+        (init-point (point))
         res)
     (unwind-protect
          (setq res (ivy-read "grep: " 'counsel-grep-function
@@ -5079,8 +5085,10 @@ When ARG is non-nil, ignore NoDisplay property in *.desktop files."
 (defun counsel--switch-buffer-unwind ()
   "Clear temporary file buffers and restore `buffer-list'.
 The buffers are those opened during a session of `counsel-switch-buffer'."
-  (mapc 'kill-buffer counsel--switch-buffer-temporary-buffers)
-  (mapc 'bury-buffer counsel--switch-buffer-previous-buffers)
+  (mapc #'kill-buffer counsel--switch-buffer-temporary-buffers)
+  (mapc #'bury-buffer (cl-remove-if-not
+                       #'buffer-live-p
+                       counsel--switch-buffer-previous-buffers))
   (setq counsel--switch-buffer-temporary-buffers nil
         counsel--switch-buffer-previous-buffers nil))
 

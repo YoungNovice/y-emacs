@@ -1,0 +1,12 @@
+* 加载模块的几种方式
+1. 配置load-path require filename
+
+2. 配置load-path load filename
+
+3. 直接用load-file
+
+4. 在文件里面搞个函数 然后用(auto 'func name "filename") (func-name)
+
+5. update-file-autoloads 然后load
+(update-file-autoloads "~/.emacs.d/lisp/init-better-defaults.el" t "~/.emacs.d/lisp/init-better-defaults-autoload.el")
+(load "init-better-defaults-autoload")

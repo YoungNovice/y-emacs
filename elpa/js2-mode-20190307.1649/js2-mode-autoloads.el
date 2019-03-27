@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "js2-imenu-extras" "js2-imenu-extras.el" (23705
-;;;;;;  1053 390324 176000))
+;;;### (autoloads nil "js2-imenu-extras" "js2-imenu-extras.el" (23706
+;;;;;;  53570 586938 501000))
 ;;; Generated autoloads from js2-imenu-extras.el
 
 (autoload 'js2-imenu-extras-setup "js2-imenu-extras" "\
@@ -19,8 +19,8 @@ Toggle Imenu support for frameworks and structural patterns.
 
 ;;;***
 
-;;;### (autoloads nil "js2-mode" "js2-mode.el" (23705 1053 392776
-;;;;;;  995000))
+;;;### (autoloads nil "js2-mode" "js2-mode.el" (23706 53570 588213
+;;;;;;  998000))
 ;;; Generated autoloads from js2-mode.el
 
 (autoload 'js2-highlight-unused-variables-mode "js2-mode" "\
@@ -56,7 +56,7 @@ variables (`sgml-basic-offset' et al) locally, like so:
 ;;;***
 
 ;;;### (autoloads nil nil ("js2-mode-pkg.el" "js2-old-indent.el")
-;;;;;;  (23705 1053 395635 364000))
+;;;;;;  (23706 53570 589626 955000))
 
 ;;;***
 

@@ -26,11 +26,11 @@
 	finally (return t)))
 
 (unless (young/packages-installed-p)
-				   (message "%s" "Refreshing package database..." )
-				   (package-refresh-contents)
-				   (dolist (pkg young/packages)
-				     (when (not (package-installed-p pkg))
-				       (package-install pkg))))
+  (message "%s" "Refreshing package database..." )
+  (package-refresh-contents)
+  (dolist (pkg young/packages)
+    (when (not (package-installed-p pkg))
+      (package-install pkg))))
 
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
