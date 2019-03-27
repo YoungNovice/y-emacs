@@ -16,7 +16,7 @@
 			 js2-mode
 			 nodejs-repl
 			 exec-path-from-shell
-;;			 reveal-in-osx-finder
+			 reveal-in-osx-finder
 			 ) "Default packages")
 
 (setq package-selected-packages young/packages)
