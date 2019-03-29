@@ -2,7 +2,8 @@
 
 (when (>= emacs-major-version 24)
   (require 'package)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t))
+;;  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t))
+  (add-to-list 'package-archives '("popkit" . "http://elpa.popkit.org/packages/") t))
 
 (defvar young/packages '(
 			 company
@@ -19,6 +20,8 @@
 			 reveal-in-osx-finder
 			 web-mode
 			 js2-refactor
+			 expand-region
+			 iedit
 			 ) "Default packages")
 
 (setq package-selected-packages young/packages)

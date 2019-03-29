@@ -27,6 +27,8 @@
 
 (global-set-key (kbd "s-/") 'hippie-expand)
 
+(global-set-key (kbd "M-s i") 'counsel-imenu)
+
 (put 'dired-find-alternate-file 'disabled nil)
 (with-eval-after-load 'dired (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
 
@@ -55,5 +57,10 @@
 		     (message "killed line")))))
 
 (js2r-add-keybindings-with-prefix "C-c C-m")
+
+;;(setq alphabet-start "abc def")
+(global-set-key (kbd "C-=") 'er/expand-region)
+;;(global-set-key (kbd "M-s e") 'iedit-mode)
+(require 'iedit)
 
 (provide 'init-keybindings)
