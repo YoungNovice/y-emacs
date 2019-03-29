@@ -61,6 +61,8 @@
 ;;(setq alphabet-start "abc def")
 (global-set-key (kbd "C-=") 'er/expand-region)
 ;;(global-set-key (kbd "M-s e") 'iedit-mode)
+
+(global-set-key (kbd "C-w") 'backward-kill-word)
 (require 'iedit)
 
 (provide 'init-keybindings)

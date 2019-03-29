@@ -9,7 +9,9 @@
    (quote
     ("bd7b7c5df1174796deefce5debc2d976b264585d51852c962362be83932873d9" default)))
  '(monokai-highlight "#EE82EE")
- '(package-selected-packages (quote (company monokai-theme hungry-delete)))
+ '(package-selected-packages
+   (quote
+    (powerline window-numbering company monokai-theme hungry-delete)))
  '(popwin:popup-window-position (quote right))
  '(popwin:popup-window-width 80))
 (custom-set-faces

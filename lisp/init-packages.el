@@ -1,9 +1,12 @@
-(require 'cl)
-
 (when (>= emacs-major-version 24)
-;;  (require 'package)
-;;  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t))
-  (setq package-archives '("popkit" . "http://elpa.popkit.org/packages/")))
+  (require 'package)
+  (package-initialize)
+
+
+  (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+                      ("melpa" . "http://elpa.emacs-china.org/melpa/"))))
+
+(require 'cl)
 
 (defvar young/packages '(
 			 company
@@ -22,6 +25,10 @@
 			 js2-refactor
 			 expand-region
 			 iedit
+			 evil
+			 evil-leader
+			 window-numbering
+;;			 powerline
 			 ) "Default packages")
 
 (setq package-selected-packages young/packages)
@@ -68,6 +75,32 @@
 
 (require 'popwin)
 (popwin-mode t)
+
+(evil-mode 1)
+(setcdr evil-insert-state-map nil)
+(define-key evil-insert-state-map [escape] 'evil-normal-state)
+(define-key evil-insert-state-map "jk" 'evil-normal-state)
+;; 默认的leader key 是,
+(global-evil-leader-mode)
+
+(setq evil-leader/leader ",")
+(evil-leader/set-key
+ "e" 'find-file
+ "b" 'switch-to-buffer
+ "k" 'kill-buffer
+ "0" 'select-window-0
+ "1" 'select-window-1
+ "2" 'select-window-2
+ "3" 'select-window-3
+ "w/" 'split-window-right
+ "w-" 'split-window-below
+ ":" 'counsel-M-x
+ "wm" 'delete-other-windows
+ )
+
+(window-numbering-mode 1)
+(require 'powerline)
+(powerline-default-theme)
 
 (provide 'init-packages)
 ;;(require 'hungry-delete)
