@@ -1,9 +1,9 @@
 (require 'cl)
 
 (when (>= emacs-major-version 24)
-  (require 'package)
+;;  (require 'package)
 ;;  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t))
-  (add-to-list 'package-archives '("popkit" . "http://elpa.popkit.org/packages/") t))
+  (setq package-archives '("popkit" . "http://elpa.popkit.org/packages/")))
 
 (defvar young/packages '(
 			 company

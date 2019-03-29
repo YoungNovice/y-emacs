@@ -1,0 +1,31 @@
+c-x c-x 交换选中的两端
+c-x h  选中buffer
+
+
+C-w 剪切
+M-w 复制
+C-y 粘贴
+
+* 
+occur-mode 这个 M-s o 
+
+mmode2
+
+* 
+imenu
+
+* expand-region 选中增强
+C-= 然后用加减号来搞 类似于idea的ctrl-w
+
+* iedit
+M-s e 
+
+* occur 
+M-s o   (e to edit mode   C-c C-c to cancel)
+then use iedit  batch eidt same word
+
+C-; iedit default keymap
+
+
+* emacs org mode 
+C-c C-e export org mode to other file type
