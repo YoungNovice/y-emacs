@@ -29,6 +29,7 @@
 			 evil-nerd-commenter
 			 window-numbering
 			 which-key
+			 command-log-mode
 			 ) "Default packages")
 
 (setq package-selected-packages young/packages)
@@ -71,6 +72,7 @@
 (add-hook 'web-mode-hook 'my-web-mode-indent-setup)
 
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
+
 (load-theme 'monokai t)
 
 (require 'popwin)
@@ -104,7 +106,7 @@
 (window-numbering-mode 1)
 (evilnc-default-hotkeys)
 
-(dolist (mode '(ag-mode flycheck-error-list-mode git-rebase-mode))
+(dolist (mode '(ag-mode flycheck-error-list-mode git-rebase-mode 2048-mode))
   (add-to-list 'evil-emacs-state-modes mode))
 
 (add-hook 'occur-mode-hook (lambda () (evil-add-hjkl-bindings occur-mode-map 'emacs
@@ -117,6 +119,9 @@
 ;; 好用得不得了
 (which-key-mode 1)
 (setq which-key-side-window-location 'right)
+
+(require 'command-log-mode)
+(global-command-log-mode)
 
 (provide 'init-packages)
 ;;(require 'hungry-delete)
