@@ -1,2 +1,36 @@
+* spaceemacs rocks season 2
+1. evil
+
 * melpa 国内镜像
-1. 
+http://elpa.popkit.org/packages
+
+** Tweak C-w to delete backward
+dsdjksadfjaskdkasfjk
+
+
+1. c-a/c-e/c-k/c-f/c-b/c-d/c-kW
+1. nihao
+2. wohao库≈
+
+3. evil 这个插件对C-u不行
+evil的state
+evil-normal-state
+evil-insert-state
+evil-visual-state
+evil-motion-state
+evil-operator-state
+evil-emacs-state
+
+   
+
+evil-surround 
+visual-state下 S "
+cs '  "
+
+evil-leader
+
+
+** emacs debug 
+sudo /Applications/Emacs.app/Contents/MacOS/Emacs --debug-init
+
+
