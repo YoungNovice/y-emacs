@@ -12,7 +12,7 @@
  '(monokai-highlight "#EE82EE")
  '(package-selected-packages
    (quote
-    (powerline window-numbering company monokai-theme hungry-delete)))
+    (evil-nerd-commenter evil-surround powerline window-numbering company monokai-theme hungry-delete)))
  '(popwin:popup-window-position (quote right))
  '(popwin:popup-window-width 80))
 (custom-set-faces

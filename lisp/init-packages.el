@@ -27,8 +27,8 @@
 			 iedit
 			 evil
 			 evil-leader
+			 evil-nerd-commenter
 			 window-numbering
-;;			 powerline
 			 ) "Default packages")
 
 (setq package-selected-packages young/packages)
@@ -80,6 +80,8 @@
 (setcdr evil-insert-state-map nil)
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
 (define-key evil-insert-state-map "jk" 'evil-normal-state)
+(define-key evil-normal-state-map (kbd ",/") 'evilnc-comment-or-uncomment-lines)
+(define-key evil-visual-state-map (kbd ",/") 'evilnc-comment-or-uncomment-lines)
 ;; 默认的leader key 是,
 (global-evil-leader-mode)
 
@@ -92,6 +94,7 @@
  "1" 'select-window-1
  "2" 'select-window-2
  "3" 'select-window-3
+ "4" 'select-window-4
  "w/" 'split-window-right
  "w-" 'split-window-below
  ":" 'counsel-M-x
@@ -99,8 +102,18 @@
  )
 
 (window-numbering-mode 1)
-(require 'powerline)
-(powerline-default-theme)
+(evilnc-default-hotkeys)
+
+(dolist (mode '(ag-mode flycheck-error-list-mode git-rebase-mode))
+  (add-to-list 'evil-emacs-state-modes mode))
+
+(add-hook 'occur-mode-hook (lambda () (evil-add-hjkl-bindings occur-mode-map 'emacs
+					(kbd "/" 'evil-search-forward)
+					(kbd "n" 'evil-search-next)
+					(kbd "N" 'evil-search-previous)
+					(kbd "C-d" 'evil-scroll-down)
+					(kbd "C-u" 'evil-scroll-up)
+					)))
 
 (provide 'init-packages)
 ;;(require 'hungry-delete)
