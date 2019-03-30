@@ -81,7 +81,7 @@
 (evil-mode 1)
 (setcdr evil-insert-state-map nil)
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
-(define-key evil-insert-state-map "jk" 'evil-normal-state)
+;; (define-key evil-insert-state-map "jk" 'evil-normal-state)
 (define-key evil-normal-state-map (kbd ",/") 'evilnc-comment-or-uncomment-lines)
 (define-key evil-visual-state-map (kbd ",/") 'evilnc-comment-or-uncomment-lines)
 ;; 默认的leader key 是,
