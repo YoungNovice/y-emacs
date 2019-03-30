@@ -8,6 +8,7 @@
  '(custom-safe-themes
    (quote
     ("bd7b7c5df1174796deefce5debc2d976b264585d51852c962362be83932873d9" default)))
+ '(evil-want-C-u-scroll t)
  '(monokai-highlight "#EE82EE")
  '(package-selected-packages
    (quote
