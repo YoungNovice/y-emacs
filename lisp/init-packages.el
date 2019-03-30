@@ -29,6 +29,7 @@
 			 evil-leader
 			 evil-nerd-commenter
 			 window-numbering
+			 which-key
 			 ) "Default packages")
 
 (setq package-selected-packages young/packages)
@@ -114,6 +115,9 @@
 					(kbd "C-d" 'evil-scroll-down)
 					(kbd "C-u" 'evil-scroll-up)
 					)))
+;; 好用得不得了
+(which-key-mode 1)
+(setq which-key-side-window-location 'right)
 
 (provide 'init-packages)
 ;;(require 'hungry-delete)
