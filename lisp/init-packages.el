@@ -27,6 +27,7 @@
 			 evil
 			 evil-leader
 			 evil-nerd-commenter
+			 evil-escape
 			 window-numbering
 			 which-key
 			 command-log-mode
@@ -124,9 +125,12 @@
 (require 'command-log-mode)
 (global-command-log-mode)
 
-(setq key-chord-two-keys-delay 0.3)
-(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
-(key-chord-mode 1)
+;; (setq key-chord-two-keys-delay 0.3)
+;; (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+;; (key-chord-mode 1)
+(evil-escape-mode 1)
+(setq-default evil-escape-key-sequence "jk")
+(setq-default evil-escape-delay 0.2)
 
 (provide 'init-packages)
 ;;(require 'hungry-delete)
