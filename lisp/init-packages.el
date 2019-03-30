@@ -30,6 +30,7 @@
 			 window-numbering
 			 which-key
 			 command-log-mode
+			 key-chord
 			 ) "Default packages")
 
 (setq package-selected-packages young/packages)
@@ -122,6 +123,10 @@
 
 (require 'command-log-mode)
 (global-command-log-mode)
+
+(setq key-chord-two-keys-delay 0.3)
+(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+(key-chord-mode 1)
 
 (provide 'init-packages)
 ;;(require 'hungry-delete)
