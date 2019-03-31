@@ -1,20 +1,18 @@
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
 (package-initialize)
 
-(require 'org-install)
-(require 'ob-tangle)
-(org-babel-load-file (expand-file-name "yangxuan.org" user-emacs-directory))
+(add-to-list 'load-path "~/.emacs.d/lisp/")
 
-;; load-file and load
-;; require
+(defun open-my-init-file()
+  (interactive)
+  (find-file "~/.emacs.d/init.el"))
 
-;;(autoload 'test-better-defaults "init-better-defaults")
-;;(test-better-defaults)
+(require 'init-packages)
+(require 'init-ui)
+(require 'init-better-defaults)
+(require 'init-keybindings)
+(require 'init-org)
 
-;;(update-file-autoloads "~/.emacs.d/lisp/init-keybindings.el"
-;;			    t "~/.emacs.d/lisp/init-keybindings-autoload.el")
-;;(load "init-keybindings-autoload")
-;;(test-keybindings)
+(setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
+(load-file custom-file)
+
+(delete-selection-mode t)

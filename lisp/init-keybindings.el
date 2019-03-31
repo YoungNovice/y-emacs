@@ -19,8 +19,6 @@
 (global-set-key (kbd "C-h C-v") 'find-variable)
 (global-set-key (kbd "C-h C-k") 'find-function-on-key)
 
-;;(global-set-key (kbd "C-c p f") 'counsel-git)
-
 (global-set-key (kbd "C-c a") 'org-mode)
 
 (global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
@@ -58,9 +56,7 @@
 
 (js2r-add-keybindings-with-prefix "C-c C-m")
 
-;;(setq alphabet-start "abc def")
 (global-set-key (kbd "C-=") 'er/expand-region)
-;;(global-set-key (kbd "M-s e") 'iedit-mode)
 
 (global-set-key (kbd "C-w") 'backward-kill-word)
 (require 'iedit)

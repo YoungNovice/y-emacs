@@ -1,0 +1,37 @@
+* init.el
+
+;;(require 'org-install)
+;;(require 'ob-tangle)
+;;(org-babel-load-file (expand-file-name "yangxuan.org" user-emacs-directory))
+
+;; load-file and load
+;; require
+
+;;(autoload 'test-better-defaults "init-better-defaults")
+;;(test-better-defaults)
+
+;;(update-file-autoloads "~/.emacs.d/lisp/init-keybindings.el"
+;;			    t "~/.emacs.d/lisp/init-keybindings-autoload.el")
+;;(load "init-keybindings-autoload")
+;;(test-keybindings)
+
+* init-better-defaults
+;;(set-background-color "black") ;;使用黑色背景
+;;(set-foreground-color "white") ;;使用白色前景
+
+* init-keybindings
+;;(global-set-key (kbd "C-c p f") 'counsel-git)
+;;(setq alphabet-start "abc def")
+;;(global-set-key (kbd "M-s e") 'iedit-mode)
+
+* init-packages
+;;(add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
+;; (define-key evil-insert-state-map "jk" 'evil-normal-state)
+
+;; map jk 现在有了更好的方式处理
+;; (setq key-chord-two-keys-delay 0.3)
+;; (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+;; (key-chord-mode 1)
+
+;;(require 'hungry-delete)
+;;(require 'smartparens-config)

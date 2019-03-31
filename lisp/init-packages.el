@@ -52,7 +52,6 @@
   (exec-path-from-shell-initialize))
 
 (global-hungry-delete-mode 1)
-;;(add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
 (smartparens-global-mode t)
 ;; 在lisp下‘不成对生成
 (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
@@ -83,7 +82,6 @@
 (evil-mode 1)
 (setcdr evil-insert-state-map nil)
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
-;; (define-key evil-insert-state-map "jk" 'evil-normal-state)
 (define-key evil-normal-state-map (kbd ",/") 'evilnc-comment-or-uncomment-lines)
 (define-key evil-visual-state-map (kbd ",/") 'evilnc-comment-or-uncomment-lines)
 ;; 默认的leader key 是,
@@ -125,13 +123,8 @@
 (require 'command-log-mode)
 (global-command-log-mode)
 
-;; (setq key-chord-two-keys-delay 0.3)
-;; (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
-;; (key-chord-mode 1)
 (evil-escape-mode 1)
 (setq-default evil-escape-key-sequence "jk")
 (setq-default evil-escape-delay 0.2)
 
 (provide 'init-packages)
-;;(require 'hungry-delete)
-;;(require 'smartparens-config)
