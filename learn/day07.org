@@ -1,0 +1,8 @@
+* Cask项目管理工具
+1. 类比java的maven grade
+2. 2048小游戏 C-z to go to Emacs state
+3. mwe-log-commands(这个库已经过时了 现在被升级省command-log-mode)
+
+install cask command util
+install package pallet
+
