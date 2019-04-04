@@ -12,9 +12,11 @@
  '(monokai-highlight "#EE82EE")
  '(package-selected-packages
    (quote
-    (evil-escape key-chord which-key evil-nerd-commenter evil-surround powerline window-numbering company monokai-theme hungry-delete)))
+    (use-package evil-escape key-chord which-key evil-nerd-commenter evil-surround powerline window-numbering company monokai-theme hungry-delete)))
  '(popwin:popup-window-position (quote right))
- '(popwin:popup-window-width 80))
+ '(popwin:popup-window-width 80)
+ '(show-paren-mode t)
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

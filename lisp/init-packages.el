@@ -32,6 +32,7 @@
 			 which-key
 			 command-log-mode
 			 key-chord
+			 use-package
 			 ) "Default packages")
 
 (setq package-selected-packages young/packages)
