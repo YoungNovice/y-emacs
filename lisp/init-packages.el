@@ -33,6 +33,8 @@
 			 command-log-mode
 			 key-chord
 			 use-package
+			 nodejs-repl
+			 pallet
 			 ) "Default packages")
 
 (setq package-selected-packages young/packages)

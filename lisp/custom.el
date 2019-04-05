@@ -12,7 +12,7 @@
  '(monokai-highlight "#EE82EE")
  '(package-selected-packages
    (quote
-    (use-package evil-escape key-chord which-key evil-nerd-commenter evil-surround powerline window-numbering company monokai-theme hungry-delete)))
+    (s use-package evil-escape key-chord which-key evil-nerd-commenter evil-surround powerline window-numbering company monokai-theme hungry-delete)))
  '(popwin:popup-window-position (quote right))
  '(popwin:popup-window-width 80)
  '(show-paren-mode t)
