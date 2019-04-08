@@ -1,0 +1,20 @@
+* marco use-package
+  #+BEGIN_SRC emacs-lisp
+;; 变量加1的操作
+(defmacro inc (var) 
+    (list 'setq var (list '+1 var )))
+  
+  #+END_SRC
+  
+#+BEGIN_SRC 
+(quote (+ 1 1))
+;; 简写 return a list
+`(+ 1 1)
+;; 表示不执行这个代码 返回该结构
+
+;; progn 一个块
+
+
+
+  
+#+END_SRC

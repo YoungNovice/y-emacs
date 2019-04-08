@@ -123,6 +123,8 @@
 (which-key-mode 1)
 (setq which-key-side-window-location 'right)
 
+(add-hook 'python-mode-hook (lambda() (set (make-local-variable 'company-backends) '(company-anaconda))))
+
 (require 'command-log-mode)
 (global-command-log-mode)
 
